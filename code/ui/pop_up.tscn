@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn0s8us2ncr3s"]
+
+[ext_resource type="FontFile" uid="uid://ei0duco6od2r" path="res://assets/fonts/PressStart2P-Regular.ttf" id="1_xhdr8"]
+[ext_resource type="StyleBox" uid="uid://dpp1ptk3bsaqo" path="res://assets/styles/clean_black_style.tres" id="2_15nyw"]
+[ext_resource type="Script" uid="uid://dpl26if1h6qmx" path="res://code/ui/pop_up.gd" id="2_fwxo8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwxo8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.372549, 0.803922, 0.894118, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 2
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_ooi77"]
+default_font = ExtResource("1_xhdr8")
+Panel/styles/panel = SubResource("StyleBoxFlat_fwxo8")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_fwxo8")
+
+[sub_resource type="Theme" id="Theme_jl6xf"]
+default_font = ExtResource("1_xhdr8")
+Panel/styles/panel = SubResource("StyleBoxFlat_fwxo8")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_fwxo8")
+
+[sub_resource type="Theme" id="Theme_ittly"]
+Label/colors/font_color = Color(0.372549, 0.803922, 0.894118, 1)
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_xhdr8")
+Label/styles/normal = ExtResource("2_15nyw")
+
+[node name="PanelContainer" type="PanelContainer"]
+texture_filter = 1
+offset_right = 330.0
+offset_bottom = 150.0
+theme = SubResource("Theme_ooi77")
+script = ExtResource("2_fwxo8")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_jl6xf")
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ittly")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_15nyw")
+text = "Well, hello!"

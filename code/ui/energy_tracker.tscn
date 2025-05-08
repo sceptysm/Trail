@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://daflln40bw7ls"]
+
+[ext_resource type="Theme" uid="uid://co76pa3sts40e" path="res://assets/themes/theme_menu_label.tres" id="1_1ik27"]
+[ext_resource type="Script" uid="uid://c02oqhq0do26h" path="res://code/ui/ui_resource_tracker.gd" id="1_sxmy6"]
+[ext_resource type="Texture2D" uid="uid://mmlpa5effnqp" path="res://assets/sprites/energy.png" id="2_sxmy6"]
+
+[node name="EnergyTracker" type="HBoxContainer" node_paths=PackedStringArray("icon", "amount")]
+theme_override_constants/separation = 0
+script = ExtResource("1_sxmy6")
+icon = NodePath("Icon")
+amount = NodePath("Amount")
+metadata/_edit_use_anchors_ = true
+
+[node name="Amount" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_1ik27")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_sxmy6")
+expand_mode = 3
+stretch_mode = 5

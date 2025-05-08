@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c70m52h3x71rs"]
+
+[ext_resource type="Script" uid="uid://3sl6215wf8ln" path="res://data/items/item.gd" id="1_fcu3j"]
+[ext_resource type="Texture2D" uid="uid://grypfx180a2w" path="res://assets/sprites/marrow.png" id="2_fcu3j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbu6p"]
+
+[node name="MarrowBottle" type="Node2D" node_paths=PackedStringArray("pickup_radius")]
+scale = Vector2(3, 3)
+script = ExtResource("1_fcu3j")
+resource_type = "rations"
+resource_amount = 8
+pickup_radius = NodePath("PickUpArea")
+
+[node name="PickUpArea" type="Area2D" parent="."]
+position = Vector2(-0.5, 3)
+scale = Vector2(0.96, 0.96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpArea"]
+shape = SubResource("CircleShape2D_jbu6p")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_fcu3j")

@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://co76pa3sts40e"]
+
+[ext_resource type="FontFile" uid="uid://ei0duco6od2r" path="res://assets/fonts/PressStart2P-Regular.ttf" id="1_5enjm"]
+[ext_resource type="StyleBox" uid="uid://dpp1ptk3bsaqo" path="res://assets/styles/clean_black_style.tres" id="2_okgep"]
+
+[resource]
+Label/colors/font_color = Color(0.372549, 0.803922, 0.894118, 1)
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_5enjm")
+Label/styles/normal = ExtResource("2_okgep")

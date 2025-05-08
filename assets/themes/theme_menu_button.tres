@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c2gad6kmvbha0"]
+
+[ext_resource type="StyleBox" uid="uid://b6bvh4ndh5sot" path="res://assets/styles/pressed_button_style.tres" id="1_gs0er"]
+[ext_resource type="StyleBox" uid="uid://bv2fboril1j4v" path="res://assets/styles/normal_button_style.tres" id="2_2h6cu"]
+[ext_resource type="FontFile" uid="uid://ei0duco6od2r" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_hkquy"]
+
+[resource]
+default_font = ExtResource("3_hkquy")
+Button/colors/font_color = Color(0.372549, 0.803922, 0.894118, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("3_hkquy")
+Button/styles/focus = ExtResource("1_gs0er")
+Button/styles/hover = ExtResource("1_gs0er")
+Button/styles/hover_pressed = ExtResource("1_gs0er")
+Button/styles/normal = ExtResource("2_2h6cu")
+Button/styles/pressed = ExtResource("1_gs0er")

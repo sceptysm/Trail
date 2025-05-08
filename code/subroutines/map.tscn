@@ -1,0 +1,189 @@
+[gd_scene load_steps=23 format=3 uid="uid://bdqgtqqgkpbiu"]
+
+[ext_resource type="Texture2D" uid="uid://emocv1tc4i48" path="res://assets/sprites/map_sprite.png" id="1_e0an3"]
+[ext_resource type="Script" uid="uid://yjo4s6gfead0" path="res://code/subroutines/map.gd" id="1_rgytb"]
+[ext_resource type="Script" uid="uid://bnthhdt18wo0k" path="res://code/subroutines/player_marker.gd" id="2_p5pve"]
+[ext_resource type="PackedScene" uid="uid://d1hm10s74dfwv" path="res://code/ui/target_destination.tscn" id="2_slutc"]
+[ext_resource type="Texture2D" uid="uid://0el16lrdns6l" path="res://assets/sprites/neutral_mrkr-sheet.png" id="3_urblq"]
+[ext_resource type="Theme" uid="uid://vx4wl5lw3c7l" path="res://assets/themes/theme_menu_message_log.tres" id="6_ue6v7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4c57u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("3_urblq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("3_urblq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("3_urblq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("3_urblq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("3_urblq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("3_urblq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaehf"]
+atlas = ExtResource("3_urblq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
+atlas = ExtResource("3_urblq")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
+atlas = ExtResource("3_urblq")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
+atlas = ExtResource("3_urblq")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_getpj"]
+atlas = ExtResource("3_urblq")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
+atlas = ExtResource("3_urblq")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d13ii"]
+atlas = ExtResource("3_urblq")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u8w0"]
+atlas = ExtResource("3_urblq")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0odxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cqfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaehf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_074og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cegan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82xsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_getpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryguw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d13ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u8w0")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 8.0
+}]
+
+[node name="Map" type="Node2D" node_paths=PackedStringArray("map_viewport", "map_viewport_container", "player_sprite", "player_marker", "message_log", "message_log_container")]
+script = ExtResource("1_rgytb")
+map_viewport = NodePath("SubViewportContainer/SubViewport")
+map_viewport_container = NodePath("SubViewportContainer")
+player_sprite = NodePath("SubViewportContainer/SubViewport/PlayerMarker/MarkerSprite")
+player_marker = NodePath("SubViewportContainer/SubViewport/PlayerMarker")
+target_marker = ExtResource("2_slutc")
+message_log = NodePath("MessageLog/ScrollContainer")
+message_log_container = NodePath("MessageLog/ScrollContainer/MessageSeparation")
+message_log_theme = ExtResource("6_ue6v7")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -47.0
+offset_right = 740.0
+offset_bottom = 553.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(750, 600)
+render_target_update_mode = 4
+
+[node name="MapSprite" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+texture_filter = 1
+position = Vector2(369, 267)
+scale = Vector2(0.885017, 0.839378)
+texture = ExtResource("1_e0an3")
+
+[node name="PlayerMarker" type="CharacterBody2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(254, 207)
+script = ExtResource("2_p5pve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/PlayerMarker"]
+shape = SubResource("CircleShape2D_4c57u")
+
+[node name="MarkerSprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/PlayerMarker"]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0odxb")
+animation = &"blink"
+autoplay = "blink"
+frame_progress = 0.399844
+
+[node name="MessageLog" type="PanelContainer" parent="."]
+offset_left = -8.0
+offset_top = 496.0
+offset_right = 740.0
+offset_bottom = 744.0
+theme = ExtResource("6_ue6v7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MessageLog"]
+layout_mode = 2
+
+[node name="MessageSeparation" type="VBoxContainer" parent="MessageLog/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MessageLog/ScrollContainer/MessageSeparation"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "> Ox : \"Moo. Moo, I say.\""
+fit_content = true
+scroll_active = false

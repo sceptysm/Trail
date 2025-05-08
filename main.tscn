@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgidplweqbj0w"]
+
+[ext_resource type="Script" uid="uid://dvwnqfipk8ud" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bdqgtqqgkpbiu" path="res://code/subroutines/map.tscn" id="2_kek77"]
+[ext_resource type="PackedScene" uid="uid://d17fo7um36ra6" path="res://code/ui/menu_container.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cw5i8a2a57xqo" path="res://code/ui/day_information_container.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bu46ftyny31la" path="res://code/ui/fare_resource_container.tscn" id="5_272bh"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("overworld_ui", "menu_container", "map")]
+script = ExtResource("1_h2yge")
+overworld_ui = NodePath("OverworldUI")
+menu_container = NodePath("OverworldUI/MenuContainer")
+map = NodePath("Map")
+
+[node name="Map" parent="." instance=ExtResource("2_kek77")]
+position = Vector2(540, 152)
+
+[node name="OverworldUI" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 126.0
+offset_top = 201.0
+offset_right = 410.0
+offset_bottom = 774.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuContainer" parent="OverworldUI" instance=ExtResource("3_lquwl")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.908451
+anchor_bottom = 0.532286
+grow_horizontal = 1
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DayInformationContainer" parent="OverworldUI" instance=ExtResource("4_7mycd")]
+layout_mode = 1
+anchor_top = -0.197208
+anchor_right = 0.711268
+anchor_bottom = -0.0488656
+offset_top = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FareResourceContainer" parent="OverworldUI" instance=ExtResource("5_272bh")]
+layout_mode = 1
+anchor_left = 3.38732
+anchor_top = -0.197208
+anchor_right = 4.07746
+anchor_bottom = -0.132635

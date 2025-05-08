@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://d17fo7um36ra6"]
+
+[ext_resource type="Theme" uid="uid://cfknfg0s1yiom" path="res://assets/themes/theme_menu_panel.tres" id="1_cseia"]
+[ext_resource type="Theme" uid="uid://c2gad6kmvbha0" path="res://assets/themes/theme_menu_button.tres" id="2_id0gk"]
+
+[node name="MenuContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cseia")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TravelButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme = ExtResource("2_id0gk")
+text = "1. Travel"
+alignment = 0
+
+[node name="StatusButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme = ExtResource("2_id0gk")
+text = "2. Status"
+alignment = 0
+
+[node name="InventoryButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme = ExtResource("2_id0gk")
+text = "3. Inventory"
+alignment = 0
+
+[node name="ScavengeButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme = ExtResource("2_id0gk")
+text = "4. Scavenge"
+alignment = 0
+
+[node name="TradeButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme = ExtResource("2_id0gk")
+text = "5. Trade"
+alignment = 0

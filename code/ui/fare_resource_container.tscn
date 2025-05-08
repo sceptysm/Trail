@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu46ftyny31la"]
+
+[ext_resource type="Theme" uid="uid://b2c2dxxeeisx7" path="res://assets/themes/theme_menu_information.tres" id="1_gj0a8"]
+[ext_resource type="PackedScene" uid="uid://cno78ibggusmr" path="res://code/ui/ration_tracker.tscn" id="2_dt2v7"]
+[ext_resource type="PackedScene" uid="uid://daflln40bw7ls" path="res://code/ui/energy_tracker.tscn" id="3_2yi7y"]
+
+[node name="FareResourceContainer" type="PanelContainer"]
+anchors_preset = -1
+anchor_left = 2.3169
+anchor_top = -0.211169
+anchor_right = 4.05634
+anchor_bottom = -0.125654
+theme = ExtResource("1_gj0a8")
+metadata/_edit_use_anchors_ = true
+
+[node name="ResourceDisplayBox" type="HBoxContainer" parent="."]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="RationTracker" parent="ResourceDisplayBox" instance=ExtResource("2_dt2v7")]
+layout_mode = 2
+
+[node name="EnergyTracker" parent="ResourceDisplayBox" instance=ExtResource("3_2yi7y")]
+layout_mode = 2
